@@ -52,6 +52,6 @@ Suporte a PWA: Sim
 Linguagem: Português do Brasil
 
 🚀 Deployment
-Atualmente deployado em: https://portfolio-wellington.netlify.app/
+Atualmente deployado em: https://portfolio-profissional-wc.netlify.app
 📄 Licença
 MIT
