@@ -9,4 +9,5 @@ yarn-debug.log*
 yarn-error.log*
 .vercel
 .idea
-.vscode
+.vscodenext-env.d.ts
+*.tsbuildinfo
