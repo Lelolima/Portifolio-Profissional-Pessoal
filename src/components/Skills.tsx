@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useMemo } from 'react'
 import { skills } from '@/data/profile'
 import { FaPython, FaReact, FaNodeJs, FaDocker, FaGitAlt } from 'react-icons/fa'
 import { SiTypescript, SiNextdotjs, SiTailwindcss, SiFastapi, SiPostgresql, SiMongodb, SiOpencv, SiTensorflow, SiPytorch } from 'react-icons/si'
@@ -28,6 +27,14 @@ const SkillIcon = ({ name }: { name: string }) => {
   const Icon = iconMap[name] || FaNodeJs
   return <Icon className="w-8 h-8" />
 }
+
+// Posições determinísticas (mesmo resultado no servidor e no cliente)
+const SKILL_CLOUD = [...Array(15)].map((_, i) => ({
+  id: i,
+  left: `${(i * 7) % 100}%`,
+  top: `${(i * 13) % 100}%`,
+  text: ['Code', 'AI', 'ML', 'Web', 'API', 'Cloud', 'Data', 'viz'][i % 8],
+}))
 
 export default function Skills() {
   const skillCategories = [
@@ -89,18 +96,7 @@ export default function Skills() {
             viewport={{ once: true }}
             className="mt-16 relative h-32"
           >
-            {useMemo(() => [...Array(15)].map((_, i) => ({
-              id: i,
-              left: `${(i * 7) % 100}%`,
-              top: `${(i * 13) % 100}%`,
-              text: ['Code', 'AI', 'ML', 'Web', 'API', 'Cloud', 'Data', 'viz'][i % 8],
-            })), [])}
-            {useMemo(() => [...Array(15)].map((_, i) => ({
-              id: i,
-              left: `${(i * 7) % 100}%`,
-              top: `${(i * 13) % 100}%`,
-              text: ['Code', 'AI', 'ML', 'Web', 'API', 'Cloud', 'Data', 'viz'][i % 8],
-            })), []).map((item) => (
+            {SKILL_CLOUD.map((item) => (
               <motion.div
                 key={item.id}
                 className="absolute text-gray-600 text-xs"
