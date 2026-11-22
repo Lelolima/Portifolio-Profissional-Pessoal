@@ -19,21 +19,21 @@ Portfólio profissional **nível elite** desenvolvido com Next.js 15, TypeScript
 
 | Tecnologia | Versão |
 |------------|--------|
-| Next.js | 15.0.0 |
-| React | 19.0.0 |
+| Next.js | 15.5.29 |
+| React | 19.2 |
 | TypeScript | 5.3.0 |
 | Tailwind CSS | 3.4.0 |
-| Framer Motion | 11.0.0 |
+| Framer Motion | 12 |
 
 ## 📦 Instalação
 
 ```bash
 # Clonar o repositório
-git clone https://github.com/Lelolima/portfolio-wellington-lima.git
-cd portfolio-wellington-lima
+git clone https://github.com/Lelolima/Portifolio-Profissional-Pessoal.git
+cd Portifolio-Profissional-Pessoal
 
-# Instalar dependências
-npm install
+# Instalar dependências (Node.js 20+)
+npm ci
 
 # Rodar em desenvolvimento
 npm run dev
@@ -44,6 +44,21 @@ npm run build
 # Rodar em produção
 npm start
 ```
+
+### Qualidade
+
+```bash
+npm run lint        # ESLint (next/core-web-vitals)
+npm run typecheck   # tsc --noEmit
+npm run build
+```
+
+Não há testes automatizados nem variáveis de ambiente: todo o conteúdo vem de `src/data/profile.ts`.
+O CI (`.github/workflows/ci.yml`) roda lint, typecheck e build em push/PR para `main`.
+
+> **Conteúdo pendente (ver `docs/auditoria/AUDITORIA-2026-11-22.md`):** o botão de CV aponta para
+> `/cv-wellington-lima.pdf`, que não existe em `public/`; artigos do blog e links "live" dos projetos
+> ainda são `#` (placeholders).
 
 ## 🌐 Deploy na Vercel
 
