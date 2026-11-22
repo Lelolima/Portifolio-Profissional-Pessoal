@@ -10,3 +10,5 @@ yarn-error.log*
 .vercel
 .idea
 .vscode
+next-env.d.ts
+*.tsbuildinfo
